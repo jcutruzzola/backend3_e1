@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+import { createHash } from "../utils/index.js";
 
 class MockingService {
     
@@ -8,14 +9,31 @@ class MockingService {
         for(let i = 0; i < num; i++){
             pets.push({
                 name: faker.animal.petName(),
-                type: faker.animal.type(),
+                specie: faker.animal.type(),
                 adopted: false,
                 birthDate: faker.date.birthdate(),
-                img: "https://via.placeholder.com/150"
+                img: "https://via.placeholder.com/344"
             })
         }
         return pets
     }
+
+    static async generateMockingUsers(num){
+        const users = [];
+
+        for(let i = 0; i < num; i++ ){
+            users.push({
+                first_name: faker.person.firstName(),
+                last_name: faker.person.lastName(),
+                email: faker.internet.email(),
+                password: await createHash("coder123"),
+                role: faker.helpers.arrayElement(["user, admin"]),
+                pets: [],
+            })
+        }
+        return users;
+    }
+
 
 }
 

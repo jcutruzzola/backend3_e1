@@ -8,6 +8,9 @@ import adoptionsRouter from './routes/adoption.router.js';
 import sessionsRouter from './routes/sessions.router.js';
 import mocksRouter from "./routes/mocks.router.js";
 
+import "./db.js";
+
+
 const app = express();
 const PORT = process.env.PORT||8080;
 // const connection = mongoose.connect(`URL DE MONGO`)
