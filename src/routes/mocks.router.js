@@ -8,8 +8,8 @@ import mocksController from "../controllers/mocks.controller.js";
 router.get("/mockingpets", mocksController.getMockingPets);
 router.get("/mockingusers", mocksController.getMockingUsers);
 router.post("/generatedata", mocksController.generateData);
-router.get("/generatedata/users", mocksController.getMockedUsers);
-router.get("/generatedata/pets", mocksController.getMockedUsers)
+// router.get("/generatedata/users", mocksController.getMockedUsers);
+// router.get("/generatedata/pets", mocksController.getMockedUsers)
 
 
 export default router;
